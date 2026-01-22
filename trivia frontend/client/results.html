@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Results - Trivia Party">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Game Over - Trivia Party</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="results-page">
+      <!-- Winner Section -->
+      <section class="winner-section">
+        <div class="winner-icon">🏆</div>
+        <h1 class="winner-text">Game Over!</h1>
+        <div class="winner-card" id="winnerCard">
+          <div class="winner-name">Player Name</div>
+          <div class="winner-score">1,234 points</div>
+        </div>
+      </section>
+
+      <!-- Final Leaderboard -->
+      <section class="leaderboard-section">
+        <h2>Final Leaderboard</h2>
+        <div class="leaderboard-container">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th class="rank-col">Rank</th>
+                <th class="name-col">Player</th>
+                <th class="score-col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <section class="results-actions">
+        <button id="playAgainBtn" class="btn btn-primary btn-lg">
+          🎮 Play Again
+        </button>
+        <button id="homeBtn" class="btn btn-secondary btn-lg">
+          🏠 Return Home
+        </button>
+      </section>
+
+      <!-- Ads Placeholder -->
+      <div class="ads-container ads-banner" id="adsBannerResults">
+        <div class="ads-placeholder">
+          <span class="ads-label">Advertisement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Trivia Party - Real-time Multiplayer Trivia Battle">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Trivia Party - Multiplayer Trivia</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="landing-page">
+      <header class="landing-header">
+        <h1 class="game-title">🎮 TRIVIA PARTY</h1>
+        <p class="game-subtitle">Real-time Multiplayer Trivia Battle</p>
+      </header>
+
+      <main class="landing-main">
+        <!-- Username Input -->
+        <div class="input-section">
+          <input 
+            type="text" 
+            id="usernameInput" 
+            class="username-input" 
+            placeholder="Enter your username"
+            maxlength="20"
+          >
+          <small id="usernameError" class="error-text"></small>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button id="createRoomBtn" class="btn btn-primary btn-lg">
+            <span class="btn-icon">➕</span>
+            Create Room
+          </button>
+          <button id="joinRoomBtn" class="btn btn-secondary btn-lg">
+            <span class="btn-icon">🔗</span>
+            Join Room
+          </button>
+        </div>
+
+        <!-- Join Room Form (Hidden) -->
+        <div id="joinRoomForm" class="join-room-form hidden">
+          <div class="form-group">
+            <label for="roomCodeInput">Room Code:</label>
+            <input 
+              type="text" 
+              id="roomCodeInput" 
+              class="room-code-input" 
+              placeholder="Enter 6-digit code"
+              maxlength="6"
+              autocomplete="off"
+            >
+            <small id="roomCodeError" class="error-text"></small>
+          </div>
+          <div class="form-buttons">
+            <button id="confirmJoinBtn" class="btn btn-primary">Join</button>
+            <button id="cancelJoinBtn" class="btn btn-outline">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading-state hidden">
+          <div class="spinner"></div>
+          <p id="loadingText">Connecting...</p>
+        </div>
+
+        <!-- Ads Placeholder -->
+        <div class="ads-container ads-banner" id="adsBannerTop">
+          <div class="ads-placeholder">
+            <span class="ads-label">Advertisement</span>
+          </div>
+        </div>
+      </main>
+
+      <!-- Info Section -->
+      <footer class="landing-footer">
+        <div class="info-card">
+          <h3>How to Play</h3>
+          <ul>
+            <li>✅ Answer questions correctly</li>
+            <li>⚡ Get bonus points for speed</li>
+            <li>🏆 Race to the top of the leaderboard</li>
+            <li>🎉 First to win takes glory!</li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Error Modal -->
+  <div id="errorModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Error</h2>
+        <button class="modal-close" id="closeErrorBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="errorMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="errorOkBtn" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="js/client.js"></script>
+  <script src="js/landing.js"></script>
+</body>
+</html>
